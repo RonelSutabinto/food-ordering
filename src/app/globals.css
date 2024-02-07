@@ -4,6 +4,6 @@
 
 
 section.hero{
-  @apply block md:grid;
+  @apply block grid;
   grid-template-columns: .4fr .6fr;
 }
