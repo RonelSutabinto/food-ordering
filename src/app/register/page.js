@@ -7,12 +7,12 @@ export default function RegisterPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  function handleFormSubmit(e){
-    e.preventDefault();
+  function handleFormSubmit(ev){
+    ev.preventDefault();
 
     fetch('api/register', {
       method: 'POST',
-      body: JSON.stringify(email, password),
+      body: JSON.stringify({email, password}),
       headers: {'Content-Type': 'application/json'},
     })
   }
@@ -26,12 +26,12 @@ export default function RegisterPage() {
           type="email" 
           placeholder="email"
           value={email}
-          onChange={ e => setEmail(e.target.value)}
+          onChange={ ev => setEmail(ev.target.value)}
         />
         <input 
           type="password" placeholder="password"
           vlaue={password}
-          onChange={ e => setPassword(e.target.value)}
+          onChange={ ev => setPassword(ev.target.value)}
         />
         <button type="submit">Register</button>
 
